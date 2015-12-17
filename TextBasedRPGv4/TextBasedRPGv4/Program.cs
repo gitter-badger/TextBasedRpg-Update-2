@@ -63,7 +63,7 @@ namespace TextBasedRPGv4
             do
             {
                 Console.Clear();
-                Console.WriteLine("You are the personification of Darkness, Living for the only purpose of consuming light. You feel as if you are guided by a mysterious force that aids your hunger. You find yourself on a rainy night at a gated home sensing the presence of light. Your blood rushes as you stare at the home.");
+                Console.WriteLine("You are the personification of Darkness, Living for the sole purpose of consuming 'light'. You feel as if you are guided by a mysterious force that aids your hunger. You find yourself on a rainy night at a gated home sensing the presence of 'light'. Your blood rushes as you stare at the home.");
                 Console.WriteLine("///////////////////////////////////////////////////////////////////////////////");
                 Console.WriteLine("'Look' around, to see if there is anything that might help you .");
                 Console.WriteLine("'Door' to force your way in.");
@@ -91,8 +91,7 @@ namespace TextBasedRPGv4
                         {
                             Console.WriteLine("You notice something, you swear wasn't there before. A hammer. You pick it up, and put it in you inventory");
                             Console.WriteLine("+5 Score");
-                            Inventory[0] = "Key";
-                            Inventory[1] = "Hammer";
+                            Inventory[0] = "Hammer";
                             Console.WriteLine("< Back");
                             Eric.Score += 5;
                             Input = Console.ReadLine().ToUpper();
@@ -119,6 +118,20 @@ namespace TextBasedRPGv4
                         } while (next == 0);
                     }
                     if (Inventory[0] != null)
+                        {
+                            do
+                            {
+                                Console.WriteLine("You need the key...");
+                                Console.WriteLine("< Back");
+                                Input = Console.ReadLine().ToUpper();
+                                if (Input == "BACK")
+                                { next = 1; }
+                                if (Input != "BACK")
+                                { next = 0; }
+                            } while (next == 0);
+                        }
+                    
+                    if (Inventory[1] != null)
                     {
                         do
                         {
@@ -181,6 +194,7 @@ namespace TextBasedRPGv4
                             {
                                 Console.WriteLine("You use the Hammer to force open the Mailbox and find the key....As you hold the key you feel invigorating...");
                                 Console.WriteLine("< Back");
+                                Inventory[1] = "Key";
                                 Input = Console.ReadLine().ToUpper();
                                 if (Input == "BACK")
                                 { next = 1; }

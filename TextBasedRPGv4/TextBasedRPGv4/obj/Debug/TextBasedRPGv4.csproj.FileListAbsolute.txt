@@ -22,3 +22,9 @@ C:\Users\Eric\Desktop\TextBasedRPGv4\TextBasedRPGv4\obj\Debug\TextBasedRPGv4.pdb
 C:\Users\Eric\Desktop\TextBasedRPGv4\TextBasedRPGv4\bin\Debug\TextBasedRPGv4.exe
 C:\Users\Eric\Desktop\TextBasedRPGv4\TextBasedRPGv4\bin\Debug\TextBasedRPGv4.pdb
 C:\Users\Eric\Desktop\TextBasedRPGv4\TextBasedRPGv4\obj\Debug\TextBasedRPGv4.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\GitHub\TextBasedRpg-Update-2\TextBasedRPGv4\TextBasedRPGv4\bin\Debug\TextBasedRPGv4.exe.config
+C:\Users\Eric\Documents\GitHub\TextBasedRpg-Update-2\TextBasedRPGv4\TextBasedRPGv4\obj\Debug\TextBasedRPGv4.exe
+C:\Users\Eric\Documents\GitHub\TextBasedRpg-Update-2\TextBasedRPGv4\TextBasedRPGv4\obj\Debug\TextBasedRPGv4.pdb
+C:\Users\Eric\Documents\GitHub\TextBasedRpg-Update-2\TextBasedRPGv4\TextBasedRPGv4\bin\Debug\TextBasedRPGv4.exe
+C:\Users\Eric\Documents\GitHub\TextBasedRpg-Update-2\TextBasedRPGv4\TextBasedRPGv4\bin\Debug\TextBasedRPGv4.pdb
+C:\Users\Eric\Documents\GitHub\TextBasedRpg-Update-2\TextBasedRPGv4\TextBasedRPGv4\obj\Debug\TextBasedRPGv4.csprojResolveAssemblyReference.cache
