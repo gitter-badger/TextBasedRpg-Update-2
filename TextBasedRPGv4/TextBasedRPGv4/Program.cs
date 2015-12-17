@@ -19,6 +19,7 @@ namespace TextBasedRPGv4
             int Attack_Type = 0;
             int Has_Key = 0;
             int Has_Sword = 0;
+            int Hammer_Time = 0;
 
             //Strings:
             string Menu_Option;
@@ -55,7 +56,7 @@ namespace TextBasedRPGv4
                 }
                 if (Menu_Option == "3")
                 {
-                    break;
+                    next = 10;
                 }
             } while (next == 0);
 
@@ -93,6 +94,7 @@ namespace TextBasedRPGv4
                             Console.WriteLine("+5 Score");
                             Inventory[0] = "Hammer";
                             Console.WriteLine("< Back");
+                            Hammer_Time = 1;
                             Eric.Score += 5;
                             Input = Console.ReadLine().ToUpper();
                             if (Input == "BACK")
@@ -117,7 +119,7 @@ namespace TextBasedRPGv4
                             { next = 0; }
                         } while (next == 0);
                     }
-                    if (Inventory[0] != null)
+                    if (Inventory[0] != null && Hammer_Time == 1)
                         {
                             do
                             {
@@ -194,6 +196,7 @@ namespace TextBasedRPGv4
                             {
                                 Console.WriteLine("You use the Hammer to force open the Mailbox and find the key....As you hold the key you feel invigorating...");
                                 Console.WriteLine("< Back");
+                                Hammer_Time = 0;
                                 Inventory[1] = "Key";
                                 Input = Console.ReadLine().ToUpper();
                                 if (Input == "BACK")
@@ -384,14 +387,15 @@ namespace TextBasedRPGv4
                     {
                         Console.Clear();
                         Console.WriteLine("ENTITIES OF LIGHT APPEAR");
+                        Console.WriteLine("PREPARE FOR BATTLE");
                         Console.WriteLine("!!!!");
-                        Console.WriteLine("< Back");
+                        Console.WriteLine("< Battle");
                         Input = Console.ReadLine().ToUpper();
-                        if (Input == "BACK")
+                        if (Input == "BATTLE")
                         {
                             next = 3;
                         }
-                        if (Input != "BACK")
+                        if (Input != "BATTLE")
                         {
                             next = 0;
                         }
@@ -403,7 +407,7 @@ namespace TextBasedRPGv4
             //Enemy---------------------------------------------------------------------------------------------------------------------------------------------
             Enemy_Name = "Singularity";
 
-            //Combat System:--------------------------------------------------------------------------------------------------------------------------------------------------
+            //Combat System:if you press enter before entering a number game stops.. No Fix --------------------------------------------------------------------------------------------------------------------------------------------------
             do
             {
                 next = 0;
@@ -482,6 +486,7 @@ namespace TextBasedRPGv4
                 Console.WriteLine("'Continue' through home");
                 Console.WriteLine("'Menu' to check Inventory OR Status ");
                 Console.WriteLine("'Exit' to quit the menu");
+                Eric.HP += 10;
                 Input = Console.ReadLine().ToUpper();
                 if (Input == "MENU")
                 {
@@ -540,7 +545,7 @@ namespace TextBasedRPGv4
             do
             {
                 Console.Clear();
-                Console.WriteLine("As You Continue Through The Home You Come Across A Distinct Door. You Are Confronted With The Options.");
+                Console.WriteLine("As You Continue Through The Home You Come Across A Distinct Door. You Are Confronted With the options.");
                 Console.WriteLine("///////////////////////////////////////////////////////////////////////////////");
                 Console.WriteLine("'Look' to Look For More StarLight .");
                 Console.WriteLine("'Door' to Investigate The Door.");
@@ -561,7 +566,7 @@ namespace TextBasedRPGv4
                     } while (next == 0);
                 }
 
-                if (Input == "DOOR")
+                if (Input == "DOOR" && Inventory[2] == null)
                 {
                     do
                     {
@@ -574,6 +579,21 @@ namespace TextBasedRPGv4
                         { next = 0; }
                     } while (next == 0);
                 }
+
+                    if (Input == "DOOR" && Inventory[2] != null )
+                    {
+                        do
+                        {
+                            Console.WriteLine("With the Sinister Blade you destroy the godly wall to reveal a behemoth Starlight. It screeches in anger as it flashes towards you.");
+                            Console.WriteLine("< Continue");
+                            Input = Console.ReadLine().ToUpper();
+                            if (Input == "Continue")
+                            { next = 5; }
+                            if (Input != "Continue")
+                            { next = 5; }
+                        } while (next == 0);
+                    }
+                
                 if (Input == "FIND")
                 {
                     do
@@ -587,18 +607,20 @@ namespace TextBasedRPGv4
                         { next = 1; }
                         if (Input != "BACK")
                         { next = 0; }
-
+                    
                         if (Input == "TAKE")
                         {
+                            Console.Clear();
                             Console.WriteLine("You Take the blade. It is heavy and sinister.");
                             Console.WriteLine("< Back");
+                            Has_Sword = 1;
                             Input = Console.ReadLine().ToUpper();
                             Inventory[2] = "Fuming Blade";
                             if (Input == "BACK")
                             { next = 1; }
                             if (Input != "Back")
                             { next = 0; }
-                        } while (next == 0) ;
+                        } 
                     } while (next == 0);
                 }
                 if (Input == "MENU")
@@ -645,9 +667,22 @@ namespace TextBasedRPGv4
                             next = 0;
                         }
 
-                    } while (next == 0) ;
+                    } while (next == 0) ;  
                 }
-            } while (next != 3);   
+                else { }
+            } while (next != 5);
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("To Be Continued....");
+                Console.WriteLine("< Exit");
+                Input = Console.ReadLine().ToUpper();
+                if (Input =="EXIT")
+                { next = 10; }
+                if (Input !="EXIT")
+                { next = 10; }
+            } while (next == 0);
         }
     }
 } 

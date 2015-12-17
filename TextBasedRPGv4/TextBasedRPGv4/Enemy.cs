@@ -10,12 +10,13 @@ namespace TextBasedRPGv4
     {
 
         public int Enemy_HP;
-        public int Enemy_MaxDmg; 
+        public int Enemy_MaxDmg;
         
         public Enemy()
         {
             Enemy_HP = 5;
-            Enemy_MaxDmg = 2;
+            Enemy_MaxDmg = 3;
+            
         }
         public int Enemy_hp
         {
